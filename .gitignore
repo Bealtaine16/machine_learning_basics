@@ -1,1 +1,7 @@
 __pycache__/
+.DS_Store
+.vscode/
+gradient_newton_optimizer/.DS_Store
+gradient_newton_optimizer/WSI_LAB_1.py
+gradient_newton_optimizer/charts/
+gradient_newton_optimizer/cos.py
