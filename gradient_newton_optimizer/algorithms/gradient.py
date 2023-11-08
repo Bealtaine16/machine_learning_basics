@@ -3,7 +3,7 @@ import numpy as np
 from config.config import (
     output,
     precision,
-    step_condition,
+    step_condition_gradient,
     decrease_gradient,
     epoch_size,
     alfa,
@@ -47,10 +47,11 @@ class GradientDescent:
                 if np.linalg.norm(gradient, 2) <= precision:
                     return convergence_progress
 
-                # if y - y_new < step_condition:
+                # condition to adaptive learning rate
+                # if y - y_new < step_condition_gradient:
                 #     learning_rate = learning_rate * decrease_gradient
                 #     is_decreased = True
-                #     if learning_rate < step_condition:
+                #     if learning_rate < step_condition_gradient:
                 #         print(
                 #             f"[Gradient]Learn rate decreased to: {learning_rate}, function cannot find minimum"
                 #         )

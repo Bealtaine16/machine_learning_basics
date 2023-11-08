@@ -6,7 +6,7 @@ from config.config import (
     precision,
     n,
     epoch_size,
-    step_condition,
+    step_condition_newton,
     decrease_newton,
 )
 
@@ -62,10 +62,11 @@ class NewtonAlgorithm:
                 if np.linalg.norm(gradient, 2) <= precision:
                     return convergence_progress
 
-                # if y - y_new < step_condition:
+                # condition to adaptive learning rate
+                # if y - y_new < step_condition_newton:
                 #     learning_rate = learning_rate * decrease_newton
                 #     is_decreased = True
-                #     if learning_rate < step_condition:
+                #     if learning_rate < step_condition_newton:
                 #         print(
                 #             f"[Gradient]Learn rate decreased to: {learning_rate}, function cannot find minimum"
                 #         )
